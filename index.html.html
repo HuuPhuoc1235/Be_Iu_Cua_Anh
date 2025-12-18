@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gửi Bé Lê Hà Phương Uyên ❤️</title>
+    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&family=Quicksand:wght@400;600&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --pink-main: #ff85a2;
+            --pink-light: #ffeef2;
+            --pink-dark: #ff4d7d;
+        }
+
+        body {
+            margin: 0; padding: 0;
+            display: flex; justify-content: center; align-items: center;
+            height: 100vh; background-color: #f7d9d9;
+            font-family: 'Quicksand', sans-serif; overflow: hidden;
+        }
+
+        /* Tim rơi nền */
+        .heart-bg {
+            position: fixed; top: -10vh; font-size: 20px;
+            color: var(--pink-main); z-index: -1;
+            animation: fall linear forwards;
+        }
+        @keyframes fall { to { transform: translateY(110vh) rotate(360deg); } }
+
+        /* PHONG BÌ */
+        .envelope-container {
+            position: relative; width: 280px; height: 180px;
+            background: #ffb3c6; border-radius: 0 0 10px 10px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.15);
+            cursor: pointer; transition: 0.3s; text-align: center;
+        }
+        .envelope-container::before {
+            content: ""; position: absolute; top: 0; left: 0;
+            border-top: 110px solid var(--pink-main);
+            border-left: 140px solid transparent; border-right: 140px solid transparent;
+            z-index: 2;
+        }
+
+        /* OVERLAY LÁ THƯ */
+        .overlay {
+            position: fixed; top: 0; left: 0; width: 100%; height: 100%;
+            background: rgba(0, 0, 0, 0.5); display: flex;
+            justify-content: center; align-items: center;
+            opacity: 0; visibility: hidden; transition: 0.5s; z-index: 10;
+        }
+        .overlay.active { opacity: 1; visibility: visible; }
+
+        /* NỘI DUNG LÁ THƯ */
+        .letter-box {
+            width: 90%; max-width: 500px; height: 85vh;
+            background: #fffafa; padding: 40px 30px; border-radius: 25px;
+            text-align: center; transform: translateY(50px);
+            transition: 0.5s; box-shadow: 0 20px 50px rgba(0,0,0,0.3);
+            overflow-y: auto; position: relative;
+        }
+        .overlay.active .letter-box { transform: translateY(0); }
+
+        /* KHUNG ẢNH TRÒN - CĂN CHỈNH MẶT */
+        .img-container {
+            width: 220px; height: 220px;
+            margin: 20px auto;
+            border-radius: 50%;
+            overflow: hidden;
+            border: 8px solid white;
+            box-shadow: 0 8px 20px rgba(255, 133, 162, 0.3);
+            background: #eee;
+        }
+        .img-container img {
+            width: 100%; height: 100%;
+            object-fit: cover;
+            /* Lệnh dưới đây giúp căn chỉnh lấy phần trên của ảnh (thường là mặt) */
+            object-position: center 20%; 
+        }
+
+        h2 { font-family: 'Dancing Script', cursive; color: var(--pink-dark); font-size: 2.5rem; margin: 0; }
+        
+        .content-text {
+            text-align: left; line-height: 1.8; color: #444; font-size: 1.05rem;
+            white-space: pre-line; margin-bottom: 30px;
+        }
+
+        /* HỘP QUÀ */
+        .gift-section { margin-top: 30px; padding: 20px; border-top: 1px dashed var(--pink-main); }
+        .gift-box {
+            font-size: 55px; cursor: pointer; display: inline-block;
+            transition: transform 0.3s; animation: wobble 1s infinite;
+        }
+        @keyframes wobble {
+            0%, 100% { transform: rotate(0); }
+            25% { transform: rotate(-10deg); }
+            75% { transform: rotate(10deg); }
+        }
+        
+        #secret-msg {
+            display: none; font-family: 'Dancing Script', cursive;
+            font-size: 2.2rem; color: var(--pink-dark);
+            margin-top: 15px; animation: zoomIn 0.5s;
+            text-shadow: 1px 1px 2px rgba(0,0,0,0.1);
+        }
+        @keyframes zoomIn { from { transform: scale(0); } to { transform: scale(1); } }
+
+        .tap-text { position: absolute; bottom: -40px; width: 100%; color: white; font-weight: 600; animation: blink 1s infinite; }
+        @keyframes blink { 50% { opacity: 0.5; } }
+
+        .close-btn { background: var(--pink-main); color: white; border: none; padding: 12px 25px; border-radius: 25px; cursor: pointer; margin-top: 20px; font-weight: bold; }
+    </style>
+</head>
+<body>
+
+    <div class="envelope-container" onclick="openLetter()">
+        <div class="tap-text">GỬI BÉ PHƯƠNG UYÊN ❤️</div>
+    </div>
+
+    <div class="overlay" id="letterOverlay">
+        <div class="letter-box">
+            <h2>Happy Birthday, My Love!</h2>
+            
+            <div class="img-container">
+                <img src="beiu.jpg" alt="Phuong Uyen">
+            </div>
+
+            <div class="content-text">
+                Gửi <b>Lê Hà Phương Uyên</b>, người con gái quan trọng nhất của anh!
+
+                Hôm nay là một ngày thật đặc biệt, ngày mà cả thế giới này trở nên dịu dàng hơn vì có sự hiện diện của em. Viết những dòng này, anh muốn nói với em rằng anh cảm thấy mình là người may mắn nhất khi có em đồng hành.
+
+                Cảm ơn em đã luôn ở bên, dành cho anh những nụ cười ấm áp và cả những sự quan tâm nhỏ bé nhưng đầy chân thành. Mỗi phút giây bên em đều là những ký ức mà anh muốn nâng niu mãi mãi. Tuổi mới, anh chỉ mong em luôn rạng rỡ như ánh mặt trời, bình yên và thật hạnh phúc. Đừng lo lắng gì cả, vì phía sau em luôn có anh che chở.
+
+                Hãy cứ là chính em - một Phương Uyên đáng yêu và đầy bản lĩnh nhé!
+            </div>
+
+            <div class="gift-section">
+                <p style="font-size: 0.9rem; color: #888;">Có một món quà nhỏ cho em ở đây...</p>
+                <div class="gift-box" onclick="showSecret()">🎁</div>
+                <div id="secret-msg">✨ A iu e rất nhìu lun! ✨</div>
+            </div>
+
+            <p style="font-family: 'Dancing Script', cursive; font-size: 1.5rem; color: var(--pink-dark);">
+                Mãi yêu em, Mai Hữu Phước
+            </p>
+
+            <button class="close-btn" onclick="closeLetter()">Đóng thư</button>
+        </div>
+    </div>
+
+    <script>
+        function openLetter() {
+            document.getElementById('letterOverlay').classList.add('active');
+            for(let i=0; i<40; i++) setTimeout(createHeart, i * 50);
+        }
+
+        function closeLetter() {
+            document.getElementById('letterOverlay').classList.remove('active');
+            document.getElementById('secret-msg').style.display = 'none';
+        }
+
+        function showSecret() {
+            document.getElementById('secret-msg').style.display = 'block';
+            for(let i=0; i<25; i++) setTimeout(createHeart, i * 30);
+        }
+
+        function createHeart() {
+            const heart = document.createElement('div');
+            heart.classList.add('heart-bg');
+            heart.innerHTML = '❤️';
+            heart.style.left = Math.random() * 100 + 'vw';
+            heart.style.animationDuration = Math.random() * 3 + 2 + 's';
+            document.body.appendChild(heart);
+            setTimeout(() => { heart.remove(); }, 5000);
+        }
+        setInterval(createHeart, 800);
+    </script>
+</body>
+</html>
